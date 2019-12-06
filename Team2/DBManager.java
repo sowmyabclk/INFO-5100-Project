@@ -1,11 +1,7 @@
 package Project;
 
 import java.sql.*;
-import java.util.ArrayList;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 public class DBManager {
 	static ResultSet data;
@@ -69,23 +65,6 @@ public class DBManager {
 		return null;
 	}
 
-	public static void main(String[] args) throws SQLException {
-
-		 ResultSet arr = getAllData();
-		//ResultSet arr = getAllDataWithFilters("brand = 'TESLA'");
-		ResultSetMetaData metadata = arr.getMetaData();
-		int columnCount = metadata.getColumnCount();
-		ArrayList<String> columnValues = new ArrayList<String>();
-
-		while (arr.next()) {
-
-			for (int i = 1; i <= columnCount; i++) {
-				columnValues.add(arr.getString(i));
-
-			}
-
-		}
-		System.out.println(columnValues);
-	}
+	
 
 }
